@@ -3,17 +3,22 @@ using namespace std;
 int main()
 {
     int n;
-    cout << "Enter number you want to reverse:";
+    cout << "Enter number you want to check:";
     cin >> n;
     int digitSum = 0;
-    int digits;
-    while (n > 0)
+    for (int i = 1; i <= n; i++)
     {
-        digits = n % 10;
-        digitSum = (digitSum * 10) + digits;
-        n /= 10;
+        if (i % 2 == 0)
+        {
+            digitSum -= i;
+        }
+        else
+        {
+            digitSum += i;
+        }
     }
-    cout << "The reverse of your number is:" << digitSum << endl;
+
+    cout << "The final number is:" << digitSum << endl;
 
     return 0;
 }
