@@ -3,15 +3,17 @@ using namespace std;
 int main()
 {
     int n;
-    cout << "Enter number you want to check:";
+    cout << "Enter number you want to add:";
     cin >> n;
-    int digit = 0;
+    int digitSum = 0;
+    int digits;
     while (n > 0)
     {
-        digit++;
-        n = n / 10;
+        digits = n % 10;
+        digitSum += digits;
+        n /= 10;
     }
-    cout << "The digits in your number are:" << digit << endl;
+    cout << "The sum of your number is:" << digitSum << endl;
 
     return 0;
 }
