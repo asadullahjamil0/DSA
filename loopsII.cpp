@@ -3,22 +3,14 @@ using namespace std;
 int main()
 {
     int n;
-    cout << "Enter number you want to check:";
+    cout << "Enter number for factorial:";
     cin >> n;
-    int digitSum = 0;
+    int digitSum = 1;
     for (int i = 1; i <= n; i++)
     {
-        if (i % 2 == 0)
-        {
-            digitSum -= i;
-        }
-        else
-        {
-            digitSum += i;
-        }
+        digitSum *= i;
+        cout << "The factorial of number is:" << digitSum << endl;
     }
-
-    cout << "The final number is:" << digitSum << endl;
 
     return 0;
 }
