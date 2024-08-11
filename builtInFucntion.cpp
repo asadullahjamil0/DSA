@@ -3,7 +3,7 @@
 using namespace std;
 int main()
 {
-    int a, b;
+    // int a, b;
     // this pow function to get a raise to power b
     // cout << "Please enter the value of a:";
     // cin >> a;
@@ -12,6 +12,8 @@ int main()
     // cout << pow(a, b) << endl;
 
     // This is for sqrt to find the underoot
+
+    double a, b;
     cout << "Please enter the value of a:";
     cin >> a;
     cout << "Please enter the value of b:";
