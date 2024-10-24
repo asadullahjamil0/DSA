@@ -26,30 +26,48 @@ int majElements(vector<int> nums)
 
     // Brute-Force approach to soleve that provlem
     // Sort method is used for sorting an array
-    sort(nums.begin(), nums.end());
-    int freq = 1, ans = nums[0];
+    // sort(nums.begin(), nums.end());
+    // int freq = 1, ans = nums[0];
+    // for (int i = 0; i < nums.size(); i++)
+    // {
+    //     if (nums[i] == nums[i - 1])
+    //     {
+    //         freq++;
+    //     }
+    //     else
+    //     {
+    //         freq = 1, ans = nums[i];
+    //     }
+    //     if (freq > (nums.size() / 2))
+    //     {
+    //         return ans;
+    //     }
+    // }
+
+    // More Optimized approach to solve this problem which is moore's
+    int freq = 0, ans = 0;
     for (int i = 0; i < nums.size(); i++)
     {
-        if (nums[i] == nums[i - 1])
+        if (freq == 0)
+        {
+            ans = nums[i];
+        }
+        if (ans == nums[i])
         {
             freq++;
         }
         else
         {
-            freq = 1, ans = nums[i];
-        }
-        if (freq > (nums.size() / 2))
-        {
-            return ans;
+            freq--;
         }
     }
 
-    return -1;
+    return ans;
 }
 
 int main()
 {
-    vector<int> nums = {7, 7, 7, 7, 8, 8, 8, 8, 8, 7, 7, 7};
+    vector<int> nums = {1, 1, 3, 3, 3, 1, 1, 1};
     cout << "Majority Element is: " << majElements(nums) << endl;
 
     return 0;
