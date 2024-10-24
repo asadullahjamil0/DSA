@@ -61,13 +61,24 @@ int majElements(vector<int> nums)
             freq--;
         }
     }
-
-    return ans;
+    int count = 0;
+    for (int val : nums)
+    {
+        if (val == ans)
+        {
+            count++;
+        }
+    }
+    if (count > (nums.size() / 2))
+    {
+        return ans;
+    }
+    return -1;
 }
 
 int main()
 {
-    vector<int> nums = {1, 1, 3, 3, 3, 1, 1, 1};
+    vector<int> nums = {1, 1, 3, 3, 3, 1, 1, 1, 3};
     cout << "Majority Element is: " << majElements(nums) << endl;
 
     return 0;
