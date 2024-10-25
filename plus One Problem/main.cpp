@@ -5,9 +5,10 @@ using namespace std;
 vector<int> plusOne(vector<int> &digits)
 {
     int idx = digits.size() - 1;
-    for (int val : digits)
+    while (idx >= 0)
     {
-        if (val == 9)
+
+        if (digits[idx] == 9)
         {
             digits[idx] = 0;
         }
@@ -16,14 +17,16 @@ vector<int> plusOne(vector<int> &digits)
             digits[idx] += 1;
             return digits;
         }
+        idx--;
     }
     digits.insert(digits.begin(), 1);
+
     return digits;
 }
 
 int main()
 {
-    vector<int> digits = {9};
+    vector<int> digits = {9, 9};
     vector<int> ans = plusOne(digits);
 
     cout << ans[1];
