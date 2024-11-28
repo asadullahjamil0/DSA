@@ -68,6 +68,11 @@ int main()
     cout << qu.peek() << endl;
     qu.pop();
     cout << qu.peek() << endl;
+    qu.pop();
+    qu.pop();
+    qu.pop();
+    qu.pop();
+    cout << qu.empty();
 
     return 0;
 }
