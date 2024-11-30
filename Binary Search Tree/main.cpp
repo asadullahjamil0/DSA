@@ -41,6 +41,24 @@ void inorder(Node *root)
     inorder(root->right);
 }
 
+Node *searchBST(Node *root, int key)
+{
+    if (root == NULL)
+    {
+        return NULL;
+    }
+    if (root->data == key)
+    {
+        return root;
+    }
+
+    if (root->data > key)
+    {
+        return searchBST(root->left, key);
+    }
+    return searchBST(root->right, key);
+}
+
 int main()
 {
     Node *root = NULL;
@@ -52,6 +70,19 @@ int main()
     insertBST(root, 7);
 
     inorder(root);
+
+    // Seearch Binary tree
+    searchBST(root, 5);
+    if (searchBST == NULL)
+    {
+        cout << endl
+             << "Key does not exist";
+    }
+    else
+    {
+        cout << endl
+             << "Key exists";
+    }
 
     return 0;
 }
