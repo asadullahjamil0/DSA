@@ -82,6 +82,27 @@ void deleteAtEnd(Node *&head)
     free(temp);
 }
 
+void deleteAtPosition(Node *&head, int pos)
+{
+    if (pos == 0)
+    {
+        deleteAtHead(head);
+        return;
+    }
+
+    Node *prev = head;
+    int curr_pos = 0;
+    while (curr_pos != pos - 1)
+    {
+        prev = prev->next;
+        curr_pos++;
+    }
+
+    Node *temp = prev->next;
+    prev->next = prev->next->next;
+    free(temp);
+}
+
 void displayNode(Node *head)
 {
     Node *temp = head;
@@ -111,6 +132,14 @@ int main()
     displayNode(head);
     // deleting an element from the end of the list
     deleteAtEnd(head);
+    displayNode(head);
+    // Inserting new elements in the list
+    insertAtLast(head, 6);
+    insertAtLast(head, 7);
+    insertAtLast(head, 8);
+    displayNode(head);
+    // Deleting an elements from kth position
+    deleteAtPosition(head, 2);
     displayNode(head);
 
     return 0;
