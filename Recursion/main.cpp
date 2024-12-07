@@ -1,6 +1,5 @@
-#include <iostream>
+#include <iostream>//
 using namespace std;
-
 int Sum(int n)
 {
     if (n == 0)
@@ -52,6 +51,7 @@ int main()
     cout << Power(k, p) << endl;
     cout << "Enter Number to calculate Factorial:";
     cin >> f;
+    cout << factorial(f) << endl;
     cout << factorial(f) << endl;
     return 0;
 }
