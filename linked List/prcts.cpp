@@ -62,6 +62,26 @@ void updateAtKth(Node *&head, int kth, int val)
     temp->val = val;
 }
 
+void deleteAtHead(Node *&head)
+{
+    Node *temp = head;
+    head = head->next;
+    free(temp);
+}
+
+void deleteAtEnd(Node *&head)
+{
+    Node *second_last = head;
+    while (second_last->next->next != NULL)
+    {
+        second_last = second_last->next;
+    }
+
+    Node *temp = second_last->next;
+    second_last->next = NULL;
+    free(temp);
+}
+
 void displayNode(Node *head)
 {
     Node *temp = head;
@@ -85,6 +105,12 @@ int main()
     insertAtPosition(head, 4, 1);
     displayNode(head);
     updateAtKth(head, 2, 5);
+    displayNode(head);
+    // Deleting a head node of linked list
+    deleteAtHead(head);
+    displayNode(head);
+    // deleting an element from the end of the list
+    deleteAtEnd(head);
     displayNode(head);
 
     return 0;
