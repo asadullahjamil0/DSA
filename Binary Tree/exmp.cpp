@@ -66,6 +66,7 @@ int main() {
     Node* root = nullptr;
     root = insert(root, 50);
     insert(root, 30);
+    insert(root, 50);
     insert(root, 20);
     insert(root, 40);
     insert(root, 70);
