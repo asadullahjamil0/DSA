@@ -12,7 +12,10 @@ public:
         id = inpId;
         salary = 40.2389;
     }
-    Employee() {}
+    Employee()
+    {
+        cout << "Calling from Base class" << endl;
+    }
 };
 
 class Programmer : public Employee
@@ -32,6 +35,7 @@ int main()
 {
     Employee emp1(23);
     cout << emp1.id << endl;
+    cout << "This is where we get Default constructor from base class!" << endl;
     Programmer prog(34);
     cout << prog.languageCode << endl;
     cout << prog.id << endl;
