@@ -20,13 +20,14 @@ void bubbleSort(int A[], int n)
 
 int main()
 {
-    int A[] = {30, 60, 50, 40, 10, 20};
+    // int A[] = {30, 60, 50, 40, 10, 20};
+    int B[] = { 12, 43, 91, 74, 41, 72 };
 
-    bubbleSort(A, 6);
+    bubbleSort(B, 6);
 
     cout << "Sorted Array-> ";
     for (int i = 0; i < 6; i++)
     {
-        cout << A[i] << ",";
+        cout << B[i] << ",";
     }
 }
