@@ -30,7 +30,7 @@ void countingSort(vector<int>& arr) {
 
 // Main function to test counting sort
 int main() {
-    vector<int> arr = {4, 2, 2, 8, 3, 3, 1};
+    vector<int> arr = {4, 2, 2, 8, 3, 3, 1, 78, 23, 45};
 
     cout << "Original array:\n";
     for (int num : arr) {
