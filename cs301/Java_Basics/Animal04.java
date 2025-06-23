@@ -6,5 +6,6 @@ public class Animal04 {
     public static void main(String args[]) {
         System.out.println("Main function called...");
         Animal04 a = new Animal04();
+        System.out.print(a);
     }
 }
